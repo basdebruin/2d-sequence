@@ -1,2 +1,4 @@
-# 2d-sequence
-2D Sequencer Web App CSD2D Assignment
+# 2D Sequence
+#### A CSD2D assignment
+
+A 2 dimentional sequencer webapp made as a playful way of making music in the browser.
