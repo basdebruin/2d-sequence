@@ -1,0 +1,77 @@
+// app scss file for kalimba app
+// bas de bruin
+
+@import 'head';
+
+$grid-x-amt: 10;
+$grid-y-amt: 10;
+
+$grid-size: 40rem;
+
+
+button {
+    width: 80%;
+    height: 80%;
+
+    font-size: 1rem;
+    font-family: $fonts;
+    color: $color;
+
+    margin: auto;
+
+    background: #36363D;
+    border: none;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+
+    transition: all .15s;
+    &:hover {
+        transform: scale(1.1);
+        z-index: 900;
+    }
+    &:active {
+        transform: scale(1.25);
+    }
+}
+
+#grid {
+    display: grid;
+    grid-template-rows:    repeat($grid-x-amt, 1fr);
+    grid-template-columns: repeat($grid-y-amt, 1fr);
+    width:  $grid-size;
+    height: $grid-size;
+    padding: 0;
+}
+
+nav {
+    display: block;
+    height: $grid-size;
+    width: $grid-size / $grid-x-amt * 2;
+    padding: 0;
+
+    button {
+        width: 90%;
+        height: $grid-size / $grid-y-amt * 0.80;
+        margin: $grid-size / $grid-y-amt * 0.10 
+                0 
+                $grid-size / $grid-y-amt * 0.20 
+                $grid-size / $grid-y-amt * 0.10;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+
+        &.active {
+            background: $color;
+            color: $background;
+            box-shadow: 0px 0px 20px -10px $color;
+        }
+    }
+}
+
+#debug {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+}

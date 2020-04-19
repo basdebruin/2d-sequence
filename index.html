@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>2D Sequencer</title>
+    <meta name="author" content="Bas de Bruin">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/app.min.css" type="text/css">
+
+    <script src="lib/Tone.js"></script>
+
+    <script src="button.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="container">
+
+        <nav>
+            <button onclick="setMode(event, 'strike')">Strike</button>
+            <button onclick="setMode(event, 'edit')" class="active">Edit</button>
+        </nav>
+
+        <div id="grid"></div>
+
+    </div>
+
+    <output id="debug"></output>
+</body>
+
+</html>
