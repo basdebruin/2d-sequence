@@ -2,6 +2,7 @@
 // bas de bruin
 
 const gridSize = 10;
+const beatTime = 200; // beat length in ms
 
 var globalMode = 'edit';
 
