@@ -13,10 +13,6 @@ class Button {
     constructor(parent, index) {
         // get grid position
         this.index = index;
-        this.gridPos = {
-            x: index % gridSize,
-            y: Math.floor(index / gridSize)
-        };
 
         // create element
         this.parent = parent;

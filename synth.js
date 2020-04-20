@@ -8,15 +8,3 @@ const synth = new Tone.MembraneSynth({
 
     volume: -10
 }).toMaster();
-
-
-
-// // resume audio context on click
-// function resumeAudioContext() {
-//     Tone.context.resume();
-//     console.log("Audio resumed");
-// }
-// // add to all buttons
-// document.querySelectorAll('button').forEach( elem => { 
-//     elem.addEventListener('click', resumeAudioContext, { once: true })
-// });
