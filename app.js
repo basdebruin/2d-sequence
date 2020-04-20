@@ -2,7 +2,7 @@
 // bas de bruin
 
 const gridSize = 10;
-const beatTime = 200; // beat length in ms
+const beatTime = 300; // beat length in ms
 
 var globalMode = 'edit';
 
@@ -14,7 +14,7 @@ function init() {
     gridElement = document.getElementById('grid');
     for (let i = 0; i < gridSize*gridSize; i++) {
 
-        gridItems += new Button(gridElement, i);
+        gridItems[i] = new Button(gridElement, i);
 
     }
 

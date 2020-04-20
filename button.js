@@ -21,6 +21,8 @@ class Button {
 
         // set state to inactive
         this.state = 0;
+
+        this.lastStrikeId;
     }
 
     createElem() {
@@ -42,12 +44,33 @@ class Button {
 
         } else if (globalMode === 'strike') {
 
-            if (this.state !== 0) {
-                // trigger synth
-                // note, duration, when, velocity
-                synth.triggerAttackRelease(buttonStates[this.state].note, '4n');
-            }
+            // generate a random number as a unique strike ID, 
+            // so cells won't keep triggering eachother
+            this.strike(Math.floor(Math.random()*100));
 
+        }
+    }
+
+    strike(strikeId) {
+        if (this.state !== 0 && this.lastStrikeId !== strikeId) {
+            // trigger synth
+            // note, duration, when, velocity
+            synth.triggerAttackRelease(buttonStates[this.state].note, '4n');
+
+            // remember Strike ID
+            this.lastStrikeId = strikeId;
+            // strike neighbour cells after beatTime:
+            if (this.index - gridSize >= 0)                 // UP
+                setTimeout(() => gridItems[this.index - gridSize].strike(strikeId), beatTime); 
+
+            if (this.index + gridSize < gridSize*gridSize)  // DOWN
+                setTimeout(() => gridItems[this.index + gridSize].strike(strikeId), beatTime); 
+
+            if (this.index - 1 >= 0)                        // LEFT
+                setTimeout(() => gridItems[this.index - 1].strike(strikeId), beatTime);
+
+            if (this.index + 1 < gridSize*gridSize)         // RIGHT
+                setTimeout(() => gridItems[this.index + 1].strike(strikeId), beatTime);
         }
     }
 
