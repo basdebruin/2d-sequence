@@ -23,6 +23,10 @@ class Button {
         this.state = 0;
 
         this.lastStrikeId;
+
+        // animate() vars
+        this.animationStep = 0;
+        this.animationLength = 20;
     }
 
     createElem() {
@@ -57,6 +61,9 @@ class Button {
             // note, duration, when, velocity
             synth.triggerAttackRelease(buttonStates[this.state].note, '4n');
 
+            // trigger animation
+            this.animate();
+
             // remember Strike ID
             this.lastStrikeId = strikeId;
             // strike neighbour cells after beatTime:
@@ -81,6 +88,30 @@ class Button {
             this.elem.style.boxShadow = '0px 0px 20px -5px' + buttonStates[this.state].color;
         } else {
             this.elem.style.boxShadow = 'none';
+        }
+    }
+
+    animate() {
+        if (this.animationStep < this.animationLength) {
+
+            // calc animation values and set css attributes
+            const brightness = 100 + (1 - (this.animationStep / this.animationLength)) * 250;
+            const scale =      1   + (1 - (this.animationStep / this.animationLength)) * 0.3;
+
+            this.elem.style.filter = `brightness(${brightness}%)`;
+            this.elem.style.transform = `scale(${scale})`;
+
+            this.animationStep++;
+
+            // request next animation frame
+            window.requestAnimationFrame(() => { this.animate() });
+
+        } else {
+            // reset
+            this.changeColor();
+            this.elem.style.filter = 'none';
+            //this.elem.style.transform = 'none';
+            this.animationStep = 0;
         }
     }
     
