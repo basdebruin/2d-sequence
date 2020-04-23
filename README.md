@@ -1,6 +1,8 @@
 # 2D Sequence
 #### A CSD2D assignment
 
+![Screenshot](docs/final_screenshot.png)
+
 A 2 Dimentional Sequencer WebApp.
 
 [**Try it live!**](https://basdebruin.github.io/2d-sequence/)
