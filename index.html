@@ -20,11 +20,23 @@
 </head>
 
 <body onload="init()">
+
+    <div id="title">
+        <h1>2D Sequence</h1>
+        <h2>by Bas de Bruin</h2>
+    </div>
+
     <div class="container">
 
         <nav>
-            <button onclick="setMode(event, 'strike')">Strike</button>
-            <button onclick="setMode(event, 'edit')" class="active">Edit</button>
+            <div id="switch">
+                <button onclick="setMode(event, 'strike')">Strike</button>
+                <button onclick="setMode(event, 'edit')" class="active">Edit</button>
+            </div>
+            <div>
+                <button onclick="clearGrid()">Clear</button>
+                <a href="https://github.com/basdebruin/2d-sequence/blob/master/docs/docs.md">Docs</a>
+            </div>
         </nav>
 
         <div id="grid"></div>

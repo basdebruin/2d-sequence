@@ -43,26 +43,29 @@ body * {
   flex-flow: row nowrap;
 }
 
-button {
+button, a {
   width: 80%;
   height: 80%;
   font-size: 1rem;
   font-family: "Quicksand", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   color: #eee;
+  text-decoration: none;
   margin: auto;
+  padding: 0.8rem;
   background: #36363D;
   border: none;
   border-radius: 0.5rem;
+  outline: none;
   cursor: pointer;
   transition: all .15s;
 }
 
-button:hover {
+button:hover, a:hover {
   transform: scale(1.1);
   z-index: 900;
 }
 
-button:active {
+button:active, a:active {
   transform: scale(1.25);
 }
 
@@ -76,30 +79,59 @@ button:active {
 }
 
 nav {
-  display: block;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   height: 40rem;
   width: 8rem;
   padding: 0;
 }
 
-nav button {
+nav div {
+  display: block;
+  width: 100%;
+}
+
+nav div button, nav div a {
   width: 90%;
   height: 3.2rem;
-  margin: 0.4rem 0 0.8rem 0.4rem;
+  margin: 0.8rem 0 0.4rem 0.4rem;
   display: flex;
   align-content: center;
   justify-content: center;
   text-align: center;
 }
 
-nav button.active {
+nav div button.active, nav div a.active {
   background: #eee;
   color: #202026;
   box-shadow: 0px 0px 20px -10px #eee;
+}
+
+#switch button {
+  margin: 0.4rem 0 0.8rem 0.4rem;
 }
 
 #debug {
   position: fixed;
   bottom: 1rem;
   left: 1rem;
+}
+
+#title {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+#title h1, #title h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#title h2 {
+  text-transform: none;
+  opacity: 0.6;
 }
