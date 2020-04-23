@@ -52,4 +52,6 @@ __Het genereren__ van de knoppen met javascript en ze stylen met css bleek makke
 
 __Tone.js__ is een heel krachtige library voor audio synthese in javascript. Ik heb met redelijk weinig moeite een polyfone synthesiser gemaakt en die gekoppeld aan alle knoppen.
 
-__Browser compatibiliteit__ is een probleem waar ik bij vorige projecten niet over na hoefte te denken maar ik had de app in chrome geprobeerd en merkte dat chrome blauwe outlines om elke knop tekent als je er op klikt, dit moet denk ik op te lossen zijn met wat css.
+Ik moest een oplossing bedenken voor het probleem dat een knop die net aangeslagen is zijn buurman meteen weer aanslaat. Ik heb gekozen voor een ID systeem, waarbij elke keer dat de gebuiker klikt een willekeurig nummer wordt gegenereerd, als dat id nummer al voorbij is gekomen kan een knop niet nog een keer aangeslagen worden. Dit is geen perfecte oplossing omdat je door snel te klikken in een eindeloze feedback loop terecht kan komen maar dit leek mij voor nu de beste oplossing.
+
+__Browser compatibiliteit__ is een probleem waar ik bij vorige projecten niet over na hoefte te denken maar ik had de app in chrome geprobeerd en merkte dat chrome blauwe outlines om elke knop tekent als je er op klikt, dit bleek makkelijk op te lossen met css.
