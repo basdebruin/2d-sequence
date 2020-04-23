@@ -51,3 +51,5 @@ Dit zijn een aantal belangrijke dingen voor het uitvoeren van de web-app:
 __Het genereren__ van de knoppen met javascript en ze stylen met css bleek makkelijker dan verwacht, mijn minimale webdesign kennis kwam van pas. Ik heb voor elke knop in het grid een class gemaakt zodat alle knop code in een los bestand staat. Ik weet nu hoe arrow functions werken in javascript, dit is erg nuttig voor het toevoegen van eventListeners vanuit de button class (om de klik van elke knop te registereren).
 
 __Tone.js__ is een heel krachtige library voor audio synthese in javascript. Ik heb met redelijk weinig moeite een polyfone synthesiser gemaakt en die gekoppeld aan alle knoppen.
+
+__Browser compatibiliteit__ is een probleem waar ik bij vorige projecten niet over na hoefte te denken maar ik had de app in chrome geprobeerd en merkte dat chrome blauwe outlines om elke knop tekent als je er op klikt, dit moet denk ik op te lossen zijn met wat css.

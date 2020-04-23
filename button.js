@@ -22,6 +22,7 @@ class Button {
         // set state to inactive
         this.state = 0;
 
+        // strike id's are used to prevent previous cells from being triggered again
         this.lastStrikeId;
 
         // animate() vars
@@ -37,6 +38,9 @@ class Button {
         this.elem.addEventListener('click', () => this.onClick());
     }
 
+    // onclick function triggers when buttons is clicked
+    // edits state when in edit mode
+    // triggers strike when in strike mode
     onClick() {
         if (globalMode === 'edit') {
 
@@ -55,6 +59,8 @@ class Button {
         }
     }
 
+    // strike function triggers synth and animation
+    // also strikes neighbouring cells
     strike(strikeId) {
         if (this.state !== 0 && this.lastStrikeId !== strikeId) {
             // trigger synth
@@ -81,8 +87,9 @@ class Button {
         }
     }
 
+    // changeColor function
+    // changes background color and glow(boxShadow) css attributes
     changeColor() {
-        // set background color and glow
         this.elem.style.backgroundColor = buttonStates[this.state].color;
         if (this.state !== 0) {
             this.elem.style.boxShadow = '0px 0px 20px -5px' + buttonStates[this.state].color;
@@ -91,11 +98,13 @@ class Button {
         }
     }
 
+    // strike trigger animation
+    // animates brightness and scale over this.animationLength
     animate() {
         if (this.animationStep < this.animationLength) {
 
             // calc animation values and set css attributes
-            const brightness = 100 + (1 - (this.animationStep / this.animationLength)) * 250;
+            const brightness = 100 + (1 - (this.animationStep / this.animationLength)) * 200;
             const scale =      1   + (1 - (this.animationStep / this.animationLength)) * 0.3;
 
             this.elem.style.filter = `brightness(${brightness}%)`;
