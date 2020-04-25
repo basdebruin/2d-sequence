@@ -1,19 +1,18 @@
 // synth definition
 // bas de bruin
 
-// define new Tone membrane synth
-// const synth = new Tone.MembraneSynth({
-//     pitchDecay: 0.01,
-//     octaves: 1,
-
-//     volume: -10
-// }).toMaster();
+// define polyphonic synth with reverb
+const reverb = new Tone.Freeverb({
+    roomSize: 0.85,
+    dampening: 2000,
+    wet: 0.02
+}).toMaster();
 
 const synth = new Tone.PolySynth(6, Tone.MonoSynth, {
     oscillator: {
         type: "sawtooth"
     },
-    volume: -10,
+    volume: -20,
     filter: {
         Q: 4,
     },
@@ -26,4 +25,4 @@ const synth = new Tone.PolySynth(6, Tone.MonoSynth, {
         octaves: 4,
         exponent: 2
     }
-}).toMaster();
+}).connect(reverb);

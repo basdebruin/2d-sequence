@@ -3,9 +3,11 @@
 
 const buttonStates = [
     { color: '#36363D' },  // inactive
-    { color: '#e66', note: 'C4' },
-    { color: '#5e5', note: 'G4' },
-    { color: '#ee6', note: 'E5' }
+    { color: '#FF6969', note: 'C3' },
+    { color: '#FFFF7A', note: 'G3' },
+    { color: '#9BF46D', note: 'D4' },
+    { color: '#65F1F1', note: 'A4' },
+    { color: '#BE83FF', note: 'E5' },
 ];
 
 class Button {
