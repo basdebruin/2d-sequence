@@ -32,12 +32,14 @@ function setMode(event, mode) {
     }
     event.currentTarget.className += " active";
 }
-function clearGrid() {
+function stopGrid() {
     // remove all timers
     var highestTimeoutId = setTimeout(";");
     for (var i = 0; i < highestTimeoutId; i++) {
         clearTimeout(i);
     }
+}
+function clearGrid() {
     // reinit grid
     init();
 }
