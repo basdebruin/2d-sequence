@@ -3,7 +3,9 @@
 
 ![Screenshot](docs/final_screenshot.png)
 
-A 2 Dimentional Sequencer WebApp.
+[Watch a demo video here](https://www.instagram.com/p/B_5Z2STHs5b/)
+
+A 2 Dimensional Sequencer WebApp.
 
 [**Try it live!**](https://basdebruin.github.io/2d-sequence/)
 
